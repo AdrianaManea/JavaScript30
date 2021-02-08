@@ -24,8 +24,9 @@ function displayMatches() {
   // console.log(matchArray);
   const html = matchArray.map(place => {
     const regex = new RegExp(this.value, 'gi');
-    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
-    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`)
+    // Find whatever it matched in regex and replace it with a class of hl and the value that the person has searched for
+    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
     return `
     <li>
       <span class="name">${cityName}, ${stateName}</span>
